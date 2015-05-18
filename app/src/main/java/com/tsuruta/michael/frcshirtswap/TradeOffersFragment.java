@@ -8,29 +8,29 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-/**
- * Created by Michael on 5/2/2015.
- */
 public class TradeOffersFragment extends Fragment
 {
     public TradeOffersFragment()
     {
     }
 
+    //Set up the list of offers for the user.
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState)
     {
         View v = inflater.inflate(R.layout.fragment_tradeoffers, container, false);
         RecyclerView recList = (RecyclerView)v.findViewById(R.id.cardList);
+
         recList.setHasFixedSize(true);
+
         LinearLayoutManager llm = new LinearLayoutManager(getActivity());
         llm.setOrientation(LinearLayoutManager.VERTICAL);
         recList.setLayoutManager(llm);
+
         MyAdapter ca = new MyAdapter(30);
         recList.setAdapter(ca);
+
         return v;
     }
-
-
 }

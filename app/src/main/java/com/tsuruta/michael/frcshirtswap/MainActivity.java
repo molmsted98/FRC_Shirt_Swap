@@ -1,5 +1,6 @@
 package com.tsuruta.michael.frcshirtswap;
 
+import android.app.FragmentManager;
 import android.support.v4.app.FragmentActivity;
 import android.app.FragmentTransaction;
 import android.support.v7.app.ActionBarActivity;
@@ -7,9 +8,25 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.parse.Parse;
+import com.parse.ParseObject;
+import com.parse.ParseUser;
+
 
 public class MainActivity extends FragmentActivity
 {
+    //Makes it possible to return to the previous fragment you were in.
+    //TODO: Make the back button not cause a crash after back on Account Fragment and open.
+    @Override
+    public void onBackPressed()
+    {
+        /*if(getFragmentManager().getBackStackEntryCount() == 0) {
+            super.onBackPressed();
+        }
+        else {
+            getFragmentManager().popBackStack();
+        }*/
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -17,10 +34,24 @@ public class MainActivity extends FragmentActivity
         super.onCreate(savedInstanceState); //Resume the screen if something was left open.
         setContentView(R.layout.activity_main); //Start the fragment holder.
 
-        //Open up the mainscreen fragment.
+        //Enable Parse
+        Parse.enableLocalDatastore(this);// Enable Local Datastore.
+
+        Parse.initialize(this, "QmFqDL3bPLAo3peYU9cyt7pQ47KzJHf2sRS3QZAM", "3ly3zV3CV3PTTomIVo2uGyn4enTg73vbkL1IjlR6");
+
+        //Bring up the account management screen if not logged in, otherwise go to app.
         FragmentTransaction ft = getFragmentManager().beginTransaction();
-        ft.replace(R.id.placeholder, new MainActivityFragment());
-        ft.commit();
+
+        ParseUser currentUser = ParseUser.getCurrentUser();
+        if (currentUser != null) {
+            ft.replace(R.id.placeholder, new MainActivityFragment());
+            ft.commit();
+        }
+        else
+        {
+            ft.replace(R.id.placeholder, new AccountFragment());
+            ft.commit();
+        }
     }
 
 
@@ -41,7 +72,8 @@ public class MainActivity extends FragmentActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_settings)
+        {
             return true;
         }
 

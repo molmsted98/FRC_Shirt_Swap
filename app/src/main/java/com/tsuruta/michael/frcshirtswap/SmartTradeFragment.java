@@ -2,6 +2,7 @@ package com.tsuruta.michael.frcshirtswap;
 
 import android.app.Activity;
 import android.app.Fragment;
+import android.app.FragmentManager;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
@@ -11,6 +12,7 @@ import android.view.ViewGroup;
 
 public class SmartTradeFragment extends Fragment
 {
+    //Set up variables.
     ViewPager pager;
     ViewPagerAdapter adapter;
     SlidingTabLayout tabs;
@@ -22,9 +24,9 @@ public class SmartTradeFragment extends Fragment
     {
     }
 
-    public void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
-
     }
 
     @Override
@@ -33,7 +35,7 @@ public class SmartTradeFragment extends Fragment
     {
         View rootView = inflater.inflate(R.layout.fragment_smarttrade,container, false);
         // Creating The ViewPagerAdapter and Passing Fragment Manager, Titles fot the Tabs and Number Of Tabs.
-        adapter =  new ViewPagerAdapter(myContext.getSupportFragmentManager(), Titles, Numboftabs);
+        adapter =  new ViewPagerAdapter(myContext.getFragmentManager(), Titles, Numboftabs, 0);
 
         // Assigning ViewPager View and setting the adapter
         pager = (ViewPager) rootView.findViewById(R.id.pager);
@@ -44,9 +46,11 @@ public class SmartTradeFragment extends Fragment
         tabs.setDistributeEvenly(true); // To make the Tabs Fixed set this true, This makes the tabs Space Evenly in Available width
 
         // Setting Custom Color for the Scroll bar indicator of the Tab View
-        tabs.setCustomTabColorizer(new SlidingTabLayout.TabColorizer() {
+        tabs.setCustomTabColorizer(new SlidingTabLayout.TabColorizer()
+        {
             @Override
-            public int getIndicatorColor(int position) {
+            public int getIndicatorColor(int position)
+            {
                 return getResources().getColor(R.color.tabsScrollColor);
             }
         });
@@ -58,7 +62,8 @@ public class SmartTradeFragment extends Fragment
     }
 
     @Override
-    public void onAttach(Activity activity) {
+    public void onAttach(Activity activity)
+    {
         myContext=(FragmentActivity) activity;
         super.onAttach(activity);
     }

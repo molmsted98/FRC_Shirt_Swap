@@ -3,27 +3,28 @@ package com.tsuruta.michael.frcshirtswap;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
+import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-/**
- * Created by hp1 on 21-01-2015.
- */
-public class Tab1 extends Fragment implements View.OnClickListener {
 
+public class Tab1 extends Fragment implements View.OnClickListener
+{
+    Button mAddShirt;
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
+    {
+        //Add the tab to the fragment.
         View v =inflater.inflate(R.layout.tab_1,container,false);
-        Button mAddShirt = (Button) v.findViewById(R.id.btnAddShirt1);
+        mAddShirt = (Button) v.findViewById(R.id.btnAddShirt1);
         mAddShirt.setOnClickListener(this);
         return v;
     }
 
     @Override
-    public void onClick(final View v) //Does stuff when it's clicked.
+    public void onClick(final View v) //Add another shirt tab for wants.
     {
         switch (v.getId())
         {

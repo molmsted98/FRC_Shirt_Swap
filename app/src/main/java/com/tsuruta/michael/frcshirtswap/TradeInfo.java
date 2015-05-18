@@ -1,6 +1,8 @@
 package com.tsuruta.michael.frcshirtswap;
 
-public class TradeInfo {
+//Information about the trade that was proposed.
+public class TradeInfo
+{
     protected String name;
     protected String size;
     protected String color;
