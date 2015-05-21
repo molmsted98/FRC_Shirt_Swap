@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/FRCShirtSwap.iml" filepath="$PROJECT_DIR$/FRCShirtSwap.iml" />
+      <module fileurl="file://$PROJECT_DIR$/FRC_Shirt_Swap.iml" filepath="$PROJECT_DIR$/FRC_Shirt_Swap.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
