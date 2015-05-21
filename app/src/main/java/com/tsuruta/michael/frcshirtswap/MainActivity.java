@@ -9,6 +9,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.parse.Parse;
+import com.parse.ParseInstallation;
 import com.parse.ParseObject;
 import com.parse.ParseUser;
 
@@ -34,10 +35,10 @@ public class MainActivity extends FragmentActivity
         super.onCreate(savedInstanceState); //Resume the screen if something was left open.
         setContentView(R.layout.activity_main); //Start the fragment holder.
 
-        //Enable Parse
+        //Enable Parse for Users and Push
         Parse.enableLocalDatastore(this);// Enable Local Datastore.
-
         Parse.initialize(this, "QmFqDL3bPLAo3peYU9cyt7pQ47KzJHf2sRS3QZAM", "3ly3zV3CV3PTTomIVo2uGyn4enTg73vbkL1IjlR6");
+        ParseInstallation.getCurrentInstallation().saveInBackground();
 
         //Bring up the account management screen if not logged in, otherwise go to app.
         FragmentTransaction ft = getFragmentManager().beginTransaction();
