@@ -1,4 +1,4 @@
-package com.tsuruta.michael.frcshirtswap;
+package com.tsuruta.michael.frcshirtswap.tabHelpers;
 
 import android.app.FragmentTransaction;
 import android.os.Bundle;
@@ -14,6 +14,8 @@ import android.widget.Toast;
 import com.parse.LogInCallback;
 import com.parse.ParseException;
 import com.parse.ParseUser;
+import com.tsuruta.michael.frcshirtswap.fragments.MainActivityFragment;
+import com.tsuruta.michael.frcshirtswap.R;
 
 public class TabLogin extends Fragment implements View.OnClickListener
 {
@@ -42,7 +44,7 @@ public class TabLogin extends Fragment implements View.OnClickListener
                 //Makes sure that text was entered.
                 if (etUsername.getText() == null || etPassword.getText() == null)
                 {
-                    Toast.makeText(getActivity(), "Please complete both fields.",
+                    Toast.makeText(getActivity(), R.string.error_missing_field,
                             Toast.LENGTH_SHORT).show();
                 }
                 else
@@ -64,7 +66,7 @@ public class TabLogin extends Fragment implements View.OnClickListener
                                     }
                                     else
                                     {
-                                        Toast.makeText(getActivity(), "Login failed.",
+                                        Toast.makeText(getActivity(), R.string.error_login_failure,
                                                 Toast.LENGTH_SHORT).show();
                                     }
                                 }

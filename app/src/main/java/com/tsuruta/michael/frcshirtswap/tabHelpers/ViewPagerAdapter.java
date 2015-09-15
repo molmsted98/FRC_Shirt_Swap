@@ -1,8 +1,13 @@
-package com.tsuruta.michael.frcshirtswap;
+package com.tsuruta.michael.frcshirtswap.tabHelpers;
 
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.support.v13.app.FragmentStatePagerAdapter;
+
+import com.tsuruta.michael.frcshirtswap.tabHelpers.Tab1;
+import com.tsuruta.michael.frcshirtswap.tabHelpers.Tab2;
+import com.tsuruta.michael.frcshirtswap.tabHelpers.TabLogin;
+import com.tsuruta.michael.frcshirtswap.tabHelpers.TabRegister;
 
 public class ViewPagerAdapter extends FragmentStatePagerAdapter
 {

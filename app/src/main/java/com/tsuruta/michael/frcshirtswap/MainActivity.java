@@ -1,17 +1,16 @@
 package com.tsuruta.michael.frcshirtswap;
 
-import android.app.FragmentManager;
 import android.support.v4.app.FragmentActivity;
 import android.app.FragmentTransaction;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import com.parse.Parse;
 import com.parse.ParseInstallation;
-import com.parse.ParseObject;
 import com.parse.ParseUser;
+import com.tsuruta.michael.frcshirtswap.fragments.AccountFragment;
+import com.tsuruta.michael.frcshirtswap.fragments.MainActivityFragment;
 
 
 public class MainActivity extends FragmentActivity

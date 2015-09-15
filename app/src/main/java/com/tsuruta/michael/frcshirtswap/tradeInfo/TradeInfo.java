@@ -1,4 +1,4 @@
-package com.tsuruta.michael.frcshirtswap;
+package com.tsuruta.michael.frcshirtswap.tradeInfo;
 
 //Information about the trade that was proposed.
 public class TradeInfo

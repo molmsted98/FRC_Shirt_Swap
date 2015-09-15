@@ -1,4 +1,4 @@
-package com.tsuruta.michael.frcshirtswap;
+package com.tsuruta.michael.frcshirtswap.tabHelpers;
 
 import android.R;
 import android.content.Context;
@@ -9,6 +9,8 @@ import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.View;
 import android.widget.LinearLayout;
+
+import com.tsuruta.michael.frcshirtswap.tabHelpers.SlidingTabLayout;
 
 class SlidingTabStrip extends LinearLayout
 {

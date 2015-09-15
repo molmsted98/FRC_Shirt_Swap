@@ -1,4 +1,4 @@
-package com.tsuruta.michael.frcshirtswap;
+package com.tsuruta.michael.frcshirtswap.tabHelpers;
 
 /*
  * Copyright 2014 Google Inc. All rights reserved.
@@ -17,7 +17,6 @@ package com.tsuruta.michael.frcshirtswap;
  */
         import android.content.Context;
         import android.graphics.Typeface;
-        import android.os.Build;
         import android.support.v4.view.PagerAdapter;
         import android.support.v4.view.ViewPager;
         import android.util.AttributeSet;
@@ -30,6 +29,9 @@ package com.tsuruta.michael.frcshirtswap;
         import android.widget.HorizontalScrollView;
         import android.widget.LinearLayout;
         import android.widget.TextView;
+
+        import com.tsuruta.michael.frcshirtswap.R;
+        import com.tsuruta.michael.frcshirtswap.tabHelpers.SlidingTabStrip;
 
 /**
  * To be used with ViewPager to provide a tab indicator component which give constant feedback as to

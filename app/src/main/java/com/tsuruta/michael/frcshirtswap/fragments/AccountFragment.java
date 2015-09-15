@@ -1,4 +1,4 @@
-package com.tsuruta.michael.frcshirtswap;
+package com.tsuruta.michael.frcshirtswap.fragments;
 
 import android.app.Activity;
 import android.app.Fragment;
@@ -8,6 +8,10 @@ import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.tsuruta.michael.frcshirtswap.R;
+import com.tsuruta.michael.frcshirtswap.tabHelpers.SlidingTabLayout;
+import com.tsuruta.michael.frcshirtswap.tabHelpers.ViewPagerAdapter;
 
 //Fragment that holds the tabs to allow users to manage accounts.
 public class AccountFragment extends Fragment

@@ -1,4 +1,4 @@
-package com.tsuruta.michael.frcshirtswap;
+package com.tsuruta.michael.frcshirtswap.tabHelpers;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -13,6 +13,7 @@ import android.widget.Toast;
 import com.parse.ParseException;
 import com.parse.ParseUser;
 import com.parse.SignUpCallback;
+import com.tsuruta.michael.frcshirtswap.R;
 
 public class TabRegister extends Fragment implements View.OnClickListener
 {
@@ -49,7 +50,7 @@ public class TabRegister extends Fragment implements View.OnClickListener
                 if ((etUsername.getText() == null) || (etPassword.getText() == null) ||
                         etPasswordConfirm.getText() == null)
                 {
-                    Toast.makeText(getActivity(), "Please enter all required information",
+                    Toast.makeText(getActivity(), R.string.error_missing_information,
                             Toast.LENGTH_SHORT).show();
                 }
                 else
@@ -74,14 +75,14 @@ public class TabRegister extends Fragment implements View.OnClickListener
                                 if (e == null)
                                 {
                                     Toast.makeText(getActivity(),
-                                            "You have been signed up! Please Login",
+                                            R.string.success_signup,
                                             Toast.LENGTH_SHORT).show();
                                 }
                                 //Failure.
                                 //TODO: Give different error codes based on error.
                                 else
                                 {
-                                    Toast.makeText(getActivity(), "Signup failed.",
+                                    Toast.makeText(getActivity(), R.string.error_signup_failure,
                                             Toast.LENGTH_SHORT).show();
                                 }
                             }
@@ -89,7 +90,7 @@ public class TabRegister extends Fragment implements View.OnClickListener
                     }
                     else
                     {
-                        Toast.makeText(getActivity(), "Your passwords do not match.",
+                        Toast.makeText(getActivity(), R.string.error_password_mismatch,
                                 Toast.LENGTH_SHORT).show();
                     }
                 }

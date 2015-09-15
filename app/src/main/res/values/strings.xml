@@ -6,4 +6,14 @@
     <string name="home_trade_offers">View and submit general offers</string>
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="account_tab_login">Login</string>
+    <string name="account_tab_register">Register</string>
+
+    <string name="error_missing_field">Please complete both fields.</string>
+    <string name="error_login_failure">Login failed.</string>
+    <string name="error_missing_information">Please enter all required information.</string>
+    <string name="error_signup_failure">Signup failed.</string>
+    <string name="error_password_mismatch">Your passwords do not match.</string>
+
+    <string name="success_signup">You have been signed up.</string>
 </resources>
